@@ -18,6 +18,21 @@ app.listen(port, (err) => {
     console.log(`Server is running on port ${port}`);
   }
 });
+// Start the server
+const server = app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+  
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`Port ${port} is already in use. Please use a different port.`);
+      process.exit(1);
+    } else {
+      console.error('Server error:', err);
+      process.exit(1);
+    }
+  });
+  
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
