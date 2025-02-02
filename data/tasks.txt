@@ -1,0 +1,3 @@
+1|Design Homepage|Create the main page|user1|false||Subtasks:1.1,Create Wireframe,user2,false,;1.2,Design Mockup,user3,false,;
+2|Develop API|Build backend API|user2|false||Subtasks:2.1,Set up server,user4,false,;2.2,Create endpoints,user1,false,;
+3|Test Application|Perform testing|user3|false||Subtasks:

@@ -1,0 +1,6 @@
+Month|Username|Score
+2023-10|user1|5
+2023-10|user2|7
+Year|Username|Score
+2023|user1|20
+2023|user2|25

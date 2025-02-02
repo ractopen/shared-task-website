@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Management App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Login Form -->
+  <div id="login-container">
+    <form id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" />
+      <button type="submit">Login</button>
+      <p id="login-error"></p>
+    </form>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+    <!-- Navigation -->
+    <nav>
+      <button id="logout-button">Logout</button>
+    </nav>
+
+    <!-- Task List -->
+    <section id="task-list">
+      <h2>Task List</h2>
+      <div id="tasks"></div>
+    </section>
+
+    <!-- Chat Section -->
+    <section id="chat-section">
+      <h2>Chat</h2>
+      <div id="chat-messages"></div>
+      <form id="chatForm">
+        <input type="text" id="chatMessage" placeholder="Type a message..." required />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- Leaderboard -->
+    <section id="leaderboard">
+      <h2>Leaderboard</h2>
+      <div id="leaderboard-content"></div>
+    </section>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
