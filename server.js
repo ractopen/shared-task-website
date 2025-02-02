@@ -5,34 +5,8 @@ const path = require('path');
 
 const app = express();
 
-// Use the PORT environment variable or default to 3000
+// Use the PORT environment variable provided by Render, or default to 3000 for local development
 const port = process.env.PORT || 3000;
-
-// Your middleware and routes...
-
-// Start the server
-app.listen(port, (err) => {
-  if (err) {
-    console.error('Failed to start server:', err);
-  } else {
-    console.log(`Server is running on port ${port}`);
-  }
-});
-// Start the server
-const server = app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-  
-  server.on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-      console.error(`Port ${port} is already in use. Please use a different port.`);
-      process.exit(1);
-    } else {
-      console.error('Server error:', err);
-      process.exit(1);
-    }
-  });
-  
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
@@ -265,6 +239,16 @@ function parseLeaderboard(data) {
 }
 
 // Start the server
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${port} is already in use. Please use a different port.`);
+    process.exit(1);
+  } else {
+    console.error('Server error:', err);
+    process.exit(1);
+  }
 });
