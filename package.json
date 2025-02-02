@@ -11,7 +11,7 @@
       "express-session": "^1.17.3"
     },
     "engines": {
-      "node": "16.x"
+      "node": "18.x"
     },
     "keywords": [],
     "author": "Your Name",
